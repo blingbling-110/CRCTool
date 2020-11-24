@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 close.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.375in" height="0.375in" viewBox="0 0 27 27"
+		xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#de0000;stroke:none;stroke-linecap:butt;stroke-width:0.75}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="1" v:pageScale="1" v:drawingUnits="19" v:shadowOffsetX="9" v:shadowOffsetY="-9"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.75,-0.75)">
+			<title>工作表.1</title>
+			<path d="M15.93 14.25 L24.84 5.34 C25.25 4.93 25.5 4.37 25.5 3.75 C25.5 2.51 24.49 1.5 23.25 1.5 C22.63 1.5 22.07 1.75
+						 21.66 2.16 L12.75 11.07 L3.84 2.16 C3.43 1.75 2.87 1.5 2.25 1.5 C1.01 1.5 0 2.51 0 3.75 C0 4.37 0.25 4.93
+						 0.66 5.34 L9.57 14.25 L0.66 23.16 C0.25 23.57 0 24.13 0 24.75 C0 25.99 1.01 27 2.25 27 C2.87 27 3.43 26.75
+						 3.84 26.34 L12.75 17.43 L21.66 26.34 C22.07 26.75 22.63 27 23.25 27 C24.49 27 25.5 25.99 25.5 24.75 C25.5
+						 24.13 25.25 23.57 24.84 23.16 L15.93 14.25 Z" class="st1"/>
+		</g>
+	</g>
+</svg>

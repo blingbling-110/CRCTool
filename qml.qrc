@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>TitleForm.ui.qml</file>
+        <file>res/BackGround.png</file>
+        <file>res/close.svg</file>
+        <file>res/menu.svg</file>
+        <file>res/minus.svg</file>
+        <file>res/close_hover.svg</file>
+        <file>res/menu_hover.svg</file>
+        <file>res/minus_hover.svg</file>
+        <file>res/BackGround_n.png</file>
+        <file>DIAS icon.ico</file>
+        <file>CustomMenuItem.qml</file>
+        <file>Config.qml</file>
+        <file>CustomTextField.qml</file>
+        <file>res/start.svg</file>
+        <file>Process.js</file>
+    </qresource>
+</RCC>

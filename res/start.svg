@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 start.svg Layer_1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="8.5in" height="11in" viewBox="0 0 612 792"
+		xml:space="preserve" color-interpolation-filters="sRGB" class="st3">
+	<v:documentProperties v:langID="2052" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#eb6100;stroke:none;stroke-linecap:butt;stroke-width:12.75}
+		.st2 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:12.75}
+		.st3 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>Layer_1</title>
+		<v:pageProperties v:drawingScale="1" v:pageScale="1" v:drawingUnits="19" v:shadowOffsetX="9" v:shadowOffsetY="-9"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(76.5,-166.5)">
+			<title>工作表.1</title>
+			<path d="M408 792 L51 792 C22.95 792 0 769.05 0 741 L0 384 C0 355.95 22.95 333 51 333 L408 333 C436.05 333 459 355.95
+						 459 384 L459 741 C459 769.05 436.05 792 408 792 Z" class="st1"/>
+		</g>
+		<g id="shape2-3" v:mID="2" v:groupContext="shape" transform="translate(255,-294)">
+			<title>工作表.2</title>
+			<path d="M140.25 690 L0 588 L0 792 L140.25 690 Z" class="st2"/>
+		</g>
+	</g>
+</svg>

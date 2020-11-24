@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 menu_hover.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="0.229166in" height="0.248749in"
+		viewBox="0 0 16.4999 17.9099" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#ffffff;stroke:none;stroke-linecap:butt;stroke-width:0.749995}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="1" v:pageScale="1" v:drawingUnits="19" v:shadowOffsetX="8.99994"
+				v:shadowOffsetY="-8.99994"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(0.749995,-0.749995)">
+			<title>工作表.1</title>
+			<path d="M15 15.56 L15 17.91 L0 17.91 L0 15.56 L15 15.56 ZM15 8.53 L15 10.88 L0 10.88 L0 8.53 L15 8.53 ZM15 1.5 L15 3.84
+						 L0 3.84 L0 1.5 L15 1.5 Z" class="st1"/>
+		</g>
+	</g>
+</svg>
