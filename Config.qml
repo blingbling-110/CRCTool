@@ -137,6 +137,29 @@ Item {
         }
     }
 
+    Rectangle {
+        x: 28
+        y: 148
+        width: 431
+        height: 128
+
+        ListView {
+            anchors.fill:parent
+            clip: true
+            ScrollBar.vertical: ScrollBar { }
+            ScrollBar.horizontal: ScrollBar { }
+            model: outputList
+            delegate: CustomTextField {
+                width: 431
+                text: startAddr + ' | ' + endAddr + ' | ' + fileName + ' | ' + headOrTail
+            }
+
+            ListModel {
+                id: outputList
+            }
+        }
+    }
+
     Image {
         id: start
         x: 184
@@ -167,7 +190,8 @@ Item {
             onClicked: worker.sendMessage({
                                               'hexFile': inputBoxInput.text,
                                               'appl': applField.text,
-                                              'fbl': fblField.text
+                                              'fbl': fblField.text,
+                                              'outputList': outputList
                                           });
         }
 

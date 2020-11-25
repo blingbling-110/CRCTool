@@ -1,6 +1,6 @@
 WorkerScript.onMessage = function(msg) {
-//    test();
-//    return;
+    test(msg);
+    return;
 
     write('file:./cfg.ini', String(msg.appl + '\r\n' + msg.fbl));//保存输入值
 
@@ -288,9 +288,13 @@ function cal_CrcCal(buf) {
     return (curCrc ^ 0xFFFFFFFF) >>> 0;
 }
 
-function test() {
-    var curCrc = 0xFFFFFFFF;
-    curCrc = (Cal_Crc32Tab[(((curCrc ^ 10) >>> 0) & 0xFF) >>> 0] ^ (curCrc >>> 8)) >>> 0;
-    print(curCrc);
+function test(msg) {
+    msg.outputList.append({
+                           'startAddr': '0x00000000',
+                           'endAddr': '0x00000000',
+                           'fileName': 'output.hex',
+                           'headOrTail': 'head'
+                       });
+    msg.outputList.sync();
     return;
 }
