@@ -1,31 +1,31 @@
 WorkerScript.onMessage = function(msg) {
-    test(msg);
-    return;
+//    test(msg);
+//    return;
 
     write('file:./cfg.ini', String(msg.appl + '\r\n' + msg.fbl));//保存输入值
 
-    var flsSeg = {
-        'startAddr': 0x70100000,
-        'endAddr': 0x70102003,
-        'content': [],
-        'fileName': 'ADAS_ICM_BSW_FLS_CRC.hex',
-        'maxAddr': 0
-    };
-    var calSeg = {
-        'startAddr': 0xA0028000,
-        'endAddr': 0xA0037FFF,
-        'content': [],
-        'fileName': 'ADAS_ICM_BSW_CAL_CRC.hex',
-        'maxAddr': 0
-    };
-    var appSeg = {
-        'startAddr': 0xA0038000,
-        'endAddr': 0xA01FFFFF,
-        'content': [],
-        'fileName': 'ADAS_ICM_BSW_APP_CRC.hex',
-        'maxAddr': 0
-    };
-    var output = [flsSeg, calSeg, appSeg];
+    //解析输出文件列表
+    var output = msg.output;
+    var outputIni = ''
+    for(var i = 0; i < output.length; i++) {
+        var outputStr = {
+            'startAddr': output[i].startAddr,
+            'endAddr': output[i].endAddr,
+            'fileName': output[i].fileName,
+            'headOrTail': output[i].headOrTail
+        };
+        outputIni += JSON.stringify(outputStr) + '\n';
+        output[i].startAddr = parseInt(output[i].startAddr.replace('0x8', '0xA'));
+        output[i].endAddr = parseInt(output[i].endAddr.replace('0x8', '0xA'));
+        output[i].content = [];
+        output[i].maxAddr = 0;
+//        print(i + '\tstartAddr\t' + output[i].startAddr);
+//        print(i + '\tendAddr\t' + output[i].endAddr);
+//        print(i + '\tfileName\t' + output[i].fileName);
+//        print(i + '\theadOrTail\t' + output[i].headOrTail);
+    }
+    write('file:./cfg.json', outputIni);//保存输出文件配置
+
     var lineDataLen = 0x20;
     var applRep = {
         'startAddr': 0xA0028020,
@@ -149,13 +149,13 @@ WorkerScript.onMessage = function(msg) {
 
         //计算CRC
         printMsg('\n开始计算' + output[i].fileName + '的CRC值……\n');
-        if(i === 0) {
+        if(output[i].headOrTail === 'tail') {
             var crc = cal_CrcCal(output[i].content.slice(0, -4));
             var crcStr = padding(crc.toString(16), 8).toUpperCase();
             for(var j = 0; j < 4; j++) {
                 output[i].content[j - 4] = parseInt(crcStr.slice(2 * j, 2 * j + 2), 16);
             }
-        }else if(i === 1 || i === 2) {
+        }else if(output[i].headOrTail === 'head') {
             var crc = cal_CrcCal(output[i].content.slice(4));
             var crcStr = padding(crc.toString(16), 8).toUpperCase();
             for(var j = 0; j < 4; j++) {
@@ -289,12 +289,17 @@ function cal_CrcCal(buf) {
 }
 
 function test(msg) {
-    msg.outputList.append({
-                           'startAddr': '0x00000000',
-                           'endAddr': '0x00000000',
-                           'fileName': 'output.hex',
-                           'headOrTail': 'head'
-                       });
-    msg.outputList.sync();
+    var output = msg.output;
+    for(var i = 0; i < output.length; i++) {
+        output[i].startAddr = parseInt(output[i].startAddr.replace('0x8', '0xA'));
+        output[i].endAddr = parseInt(output[i].endAddr.replace('0x8', '0xA'));
+        output[i].content = [];
+        output[i].maxAddr = 0;
+        print(i + '\tstartAddr\t' + output[i].startAddr);
+        print(i + '\tendAddr\t' + output[i].endAddr);
+        print(i + '\tfileName\t' + output[i].fileName);
+        print(i + '\theadOrTail\t' + output[i].headOrTail);
+    }
+
     return;
 }

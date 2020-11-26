@@ -16,5 +16,10 @@
         <file>CustomTextField.qml</file>
         <file>res/start.svg</file>
         <file>Process.js</file>
+        <file>CustomLabel.qml</file>
+        <file>res/minusBtn.svg</file>
+        <file>res/plusBtn.svg</file>
+        <file>res/minusBtn_hover.svg</file>
+        <file>res/plusBtn_hover.svg</file>
     </qresource>
 </RCC>

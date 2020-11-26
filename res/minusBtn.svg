@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- 由 Microsoft Visio, SVG Export 生成 minusBtn.svg 页-1 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events"
+		xmlns:v="http://schemas.microsoft.com/visio/2003/SVGExtensions/" width="8.55943in" height="8.55943in"
+		viewBox="0 0 616.279 616.279" xml:space="preserve" color-interpolation-filters="sRGB" class="st2">
+	<v:documentProperties v:langID="2052" v:metric="true" v:viewMarkup="false"/>
+
+	<style type="text/css">
+	<![CDATA[
+		.st1 {fill:#eb6100;stroke:none;stroke-linecap:butt;stroke-width:2.13946}
+		.st2 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
+	]]>
+	</style>
+
+	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
+		<title>页-1</title>
+		<v:pageProperties v:drawingScale="1" v:pageScale="1" v:drawingUnits="19" v:shadowOffsetX="9" v:shadowOffsetY="-9"/>
+		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(2.13946,-2.13946)">
+			<title>工作表.1</title>
+			<path d="M306 4.28 C136.99 4.28 0 141.29 0 310.28 C0 479.29 136.99 616.28 306 616.28 C475.01 616.28 612 479.29 612 310.28
+						 C612 141.29 475.01 4.28 306 4.28 ZM306 558.9 C168.68 558.9 57.38 447.6 57.38 310.28 C57.38 172.96 168.68
+						 61.67 306 61.67 C443.32 61.67 554.62 172.96 554.62 310.28 C554.62 447.6 443.32 558.9 306 558.9 ZM421.13
+						 272.03 L191.29 272.03 C180.69 272.03 172.13 280.6 172.13 291.15 L172.13 329.4 C172.13 339.98 180.69 348.53
+						 191.29 348.53 L421.13 348.53 C431.73 348.53 440.3 339.98 440.3 329.4 L440.3 291.15 C440.28 280.62 431.71
+						 272.03 421.13 272.03 Z" class="st1"/>
+		</g>
+	</g>
+</svg>
