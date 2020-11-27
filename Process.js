@@ -2,6 +2,7 @@ WorkerScript.onMessage = function(msg) {
 //    test(msg);
 //    return;
 
+    WorkerScript.sendMessage({'start': false});
     write('file:./cfg.ini', String(msg.appl + '\r\n' + msg.fbl));//保存输入值
 
     //解析输出文件列表
@@ -43,13 +44,18 @@ WorkerScript.onMessage = function(msg) {
     for(var i = 0; i < replace.length; i++) {
         if(replace[i].content.length !== 2 * (replace[i].endAddr - replace[i].startAddr + 1)) {
             printMsg('输入的' + replace[i].varName + '长度有误\n注意：不要在开头加上0x\n');
+            WorkerScript.sendMessage({'start': true});
             return;
         }
     }
 
-    WorkerScript.sendMessage({'start': false});
-    printMsg('开始解析……\n\n');
+    if(msg.hexFile === '') {
+        printMsg('未输入文件\n\n');
+        WorkerScript.sendMessage({'start': true});
+        return;
+    }
 
+    printMsg('开始解析……\n\n');
     var hexLines = read('file:///' + msg.hexFile).split('\r\n');
     var ELAddr = '0000';  // 扩展线性地址(Extended Linear Address)
     var LOAddr = '0000';  // 起始偏移地址(Load offset Address)
