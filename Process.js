@@ -159,7 +159,7 @@ WorkerScript.onMessage = function(msg) {
             var crc = cal_CrcCal(output[i].content.slice(0, -4));
             var crcStr = padding(crc.toString(16), 8).toUpperCase();
             for(var j = 0; j < 4; j++) {
-                output[i].content[j - 4] = parseInt(crcStr.slice(2 * j, 2 * j + 2), 16);
+                output[i].content[output[i].content.length + j - 4] = parseInt(crcStr.slice(2 * j, 2 * j + 2), 16);
             }
         }else if(output[i].headOrTail === 'head') {
             var crc = cal_CrcCal(output[i].content.slice(4));
@@ -174,6 +174,7 @@ WorkerScript.onMessage = function(msg) {
         var lineDataWrited = 0;
         var checksum = 0;
         var insertELA = true;
+        var length = 0;
 
         for(var j = 0; j < output[i].content.length; j++) {
             var data = output[i].content[j];
@@ -192,12 +193,12 @@ WorkerScript.onMessage = function(msg) {
             if(lineDataWrited === 0) {
                 outText += ':';
                 if(remainLen >= lineDataLen) {
-                    outText += padding(lineDataLen.toString(16), 2).toUpperCase();
-                    checksum += lineDataLen;
+                    length = lineDataLen;
                 }else {
-                    outText += padding(remainLen.toString(16), 2).toUpperCase();
-                    checksum += remainLen;
+                    length = remainLen;
                 }
+                outText += padding(length.toString(16), 2).toUpperCase();
+                checksum += length;
                 outText += dataAddr.slice(-4);
                 checksum += parseInt(dataAddr.slice(-4, -2), 16);
                 checksum += parseInt(dataAddr.slice(-2), 16);
@@ -211,7 +212,7 @@ WorkerScript.onMessage = function(msg) {
                 insertELA = true;
             }
 
-            if(lineDataWrited >= lineDataLen) {
+            if(lineDataWrited >= length) {
                 outText += padding((-checksum & 0xFF).toString(16), 2).toUpperCase() + '\n';
                 lineDataWrited = 0;
                 checksum = 0;
