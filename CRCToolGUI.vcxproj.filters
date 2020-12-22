@@ -50,10 +50,22 @@
     <None Include="res\BackGround_n.png">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Config.qml">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="CustomLabel.qml">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="CustomMenuItem.qml">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="CustomTextField.qml">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="DIAS">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Process.js">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="TitleForm.ui.qml">
@@ -80,12 +92,27 @@
     <None Include="res\minus.svg">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="res\minusBtn.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\minusBtn_hover.svg">
+      <Filter>Resource Files</Filter>
+    </None>
     <None Include="res\minus_hover.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\plusBtn.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\plusBtn_hover.svg">
       <Filter>Resource Files</Filter>
     </None>
     <QtRcc Include="qml.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+    <None Include="res\start.svg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="D:\QZJ\ADAS\ICM_CRCTool\CRCToolGUI\CRCToolGUI_resource.rc" />

@@ -150,8 +150,12 @@
   <ItemGroup>
     <None Include="res\BackGround.png" />
     <None Include="res\BackGround_n.png" />
+    <None Include="Config.qml" />
+    <None Include="CustomLabel.qml" />
     <None Include="CustomMenuItem.qml" />
+    <None Include="CustomTextField.qml" />
     <None Include="DIAS" />
+    <None Include="Process.js" />
     <None Include="TitleForm.ui.qml" />
     <None Include="res\close.svg" />
     <None Include="res\close_hover.svg" />
@@ -160,7 +164,11 @@
     <None Include="res\menu.svg" />
     <None Include="res\menu_hover.svg" />
     <None Include="res\minus.svg" />
+    <None Include="res\minusBtn.svg" />
+    <None Include="res\minusBtn_hover.svg" />
     <None Include="res\minus_hover.svg" />
+    <None Include="res\plusBtn.svg" />
+    <None Include="res\plusBtn_hover.svg" />
     <QtRcc Include="qml.qrc">
       
       
@@ -172,6 +180,7 @@
       
       
     </QtRcc>
+    <None Include="res\start.svg" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include=".\CRCToolGUI_resource.rc" />
