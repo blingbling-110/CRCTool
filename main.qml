@@ -133,7 +133,7 @@ Window {
         modal: true
 
         Label {
-            text: "TPMS_CRC32工具 v1.0\n用于TPMS项目FLASH分段并计算CRC的工具\n\n作者：覃子俊\n联系方式：qinzijun@dias.com.cn\n时间：2021年02月03日\n\n版权所有 © 2020 覃子俊 保留所有权利"
+            text: "TPMS_CRC32工具 v1.1\n用于TPMS项目FLASH分段并计算CRC的工具\n\n作者：覃子俊\n联系方式：qinzijun@dias.com.cn\n时间：2021年02月03日\n\n版权所有 © 2020 覃子俊 保留所有权利"
             font: Qt.font({
                               family: "华文楷体",
                               pointSize: 12,

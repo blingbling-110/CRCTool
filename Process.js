@@ -134,6 +134,7 @@ WorkerScript.onMessage = function(msg) {
         //内容裁剪
         if(output[i].headOrTail === 'tail') {
             output[i].content = output[i].content.slice(0, output[i].maxAddr - output[i].startAddr + 5);//按CRC字节数裁剪
+            output[i].maxAddr += 4;//按CRC字节数填充
         }else if(output[i].headOrTail === 'head') {
             var rem = (output[i].maxAddr + 1) % 0x100;
             if(rem !== 0) {
