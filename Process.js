@@ -1,6 +1,6 @@
 WorkerScript.onMessage = function(msg) {
-    test(msg);
-    return;
+//    test(msg);
+//    return;
 
     WorkerScript.sendMessage({'start': false});
     write('file:./cfg.ini', String(msg.appl + '\r\n' + msg.fbl));//保存输入值
