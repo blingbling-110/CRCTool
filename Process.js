@@ -1,6 +1,6 @@
 WorkerScript.onMessage = function(msg) {
-//    test(msg);
-//    return;
+    test(msg);
+    return;
 
     WorkerScript.sendMessage({'start': false});
     write('file:./cfg.ini', String(msg.appl + '\r\n' + msg.fbl));//保存输入值
@@ -125,6 +125,8 @@ WorkerScript.onMessage = function(msg) {
     printMsg('开始生成……\n\n');
 
     //输出hex
+    var crcByteCount = 4;//CRC算法字节数
+
     for(var i = 0; i < output.length; i++) {
         if(output[i].content.length === 0) {
             printMsg('未解析到应写入' + output[i].fileName + '中的内容\n');
@@ -133,8 +135,8 @@ WorkerScript.onMessage = function(msg) {
 
         //内容裁剪
         if(output[i].headOrTail === 'tail') {
-            output[i].content = output[i].content.slice(0, output[i].maxAddr - output[i].startAddr + 5);//按CRC字节数裁剪
-            output[i].maxAddr += 4;//按CRC字节数填充
+            output[i].content = output[i].content.slice(0, output[i].maxAddr - output[i].startAddr + 1 + crcByteCount);//按CRC字节数裁剪
+            output[i].maxAddr += crcByteCount;//按CRC字节数填充
         }else if(output[i].headOrTail === 'head') {
             var rem = (output[i].maxAddr + 1) % 0x100;
             if(rem !== 0) {
@@ -157,15 +159,15 @@ WorkerScript.onMessage = function(msg) {
         //计算CRC
         printMsg('\n开始计算' + output[i].fileName + '的CRC值……\n');
         if(output[i].headOrTail === 'tail') {
-            var crc = cal_CrcCal_32(output[i].content.slice(0, -2));
-            var crcStr = padding(crc.toString(16), 8).toUpperCase();//按CRC十六进制数的个数填充
-            for(var j = 0; j < 4; j++) {//按CRC字节数遍历
-                output[i].content[output[i].content.length + j - 4] = parseInt(crcStr.slice(2 * j, 2 * j + 2), 16);
+            var crc = cal_CrcCal_32(output[i].content.slice(0, -crcByteCount));//按CRC字节数计算
+            var crcStr = padding(crc.toString(16), crcByteCount * 2).toUpperCase();//按CRC十六进制数的个数填充
+            for(var j = 0; j < crcByteCount; j++) {//按CRC字节数遍历
+                output[i].content[output[i].content.length - crcByteCount + j] = parseInt(crcStr.slice(2 * j, 2 * j + 2), 16);
             }
         }else if(output[i].headOrTail === 'head') {
-            var crc = cal_CrcCal_32(output[i].content.slice(2));
-            var crcStr = padding(crc.toString(16), 8).toUpperCase();//按CRC十六进制数的个数填充
-            for(var j = 0; j < 4; j++) {//按CRC字节数遍历
+            var crc = cal_CrcCal_32(output[i].content.slice(crcByteCount));//按CRC字节数计算
+            var crcStr = padding(crc.toString(16), crcByteCount * 2).toUpperCase();//按CRC十六进制数的个数填充
+            for(var j = 0; j < crcByteCount; j++) {//按CRC字节数遍历
                 output[i].content[j] = parseInt(crcStr.slice(2 * j, 2 * j + 2), 16);
             }
         }
@@ -377,7 +379,7 @@ function cal_CrcCal_16(buf) {
 
 function test(msg) {
     var buf = [49, 50, 51, 52, 53, 54, 55, 56, 57];
-    print(cal_CrcCal_16(buf).toString(16));
+    print(cal_CrcCal_32(buf).toString(16));
 
     return;
 }
