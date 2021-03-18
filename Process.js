@@ -347,7 +347,7 @@ function cal_CrcCal_16(buf) {
 
 function test(msg) {
     var buf = [49, 50, 51, 52, 53, 54, 55, 56, 57];
-    print(cal_CrcCal_16(buf).toString(16));
+    print(padding(cal_CrcCal_16(buf).toString(16), 2 * 2));
 
     return;
 }
