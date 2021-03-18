@@ -35,13 +35,16 @@ WorkerScript.onMessage = function(msg) {
         'varName': 'ECU Calibration Compatibility Code(Appl)'
     };
     var fblRep = {
-        'startAddr': 0xA0038020,
-        'endAddr': 0xA003802F,
+        'startAddr': 0xA0028020,
+        'endAddr': 0xA002802F,
         'content': msg.fbl,
         'varName': 'ECU Application Software Compatibility Code(FBL)'
     };
     var replace = [applRep, fblRep];
     for(var i = 0; i < replace.length; i++) {
+        if(i === 0) {
+            continue;
+        }
         if(replace[i].content.length !== 2 * (replace[i].endAddr - replace[i].startAddr + 1)) {
             printMsg('输入的' + replace[i].varName + '长度有误\n注意：不要在开头加上0x\n');
             WorkerScript.sendMessage({'start': true});
@@ -147,6 +150,9 @@ WorkerScript.onMessage = function(msg) {
 
         //变量替换
         for(var j = 0; j < replace.length; j++) {
+            if(j === 0) {
+                continue;
+            }
             if(output[i].startAddr <= replace[j].startAddr && output[i].endAddr >= replace[j].endAddr) {
                 printMsg('在' + output[i].fileName + '中替换' + replace[j].varName + '\n');
                 for(var k = 0; k < 2 * (replace[j].endAddr - replace[j].startAddr + 1); k += 2) {

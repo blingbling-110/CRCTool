@@ -178,6 +178,7 @@ Item {
         x: 28
         y: 243
         text: "ECU Calibration Compatibility Code(Appl):"
+        visible: false
     }
 
     CustomTextField {
@@ -194,6 +195,7 @@ Item {
                 return '';
             }
         }
+        visible: false
     }
 
     CustomLabel {

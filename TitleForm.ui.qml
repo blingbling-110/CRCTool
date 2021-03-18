@@ -34,7 +34,7 @@ Rectangle {
             width: 277
             height: 64
             color: "#eb6100"
-            text: qsTr("ICM-MIFA CRC工具")
+            text: qsTr("PGM CRC工具")
             verticalAlignment: Text.AlignVCenter
             font.family: "华文楷体"
             font.bold: true
