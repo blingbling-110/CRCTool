@@ -113,7 +113,7 @@ Window {
                 id: menu
                 CustomMenuItem {
                     text: "帮助"
-                    onClicked: Qt.openUrlExternally("mailto:qinzijun@dias.com.cn?subject=ICM-MIFA%20CRC工具")
+                    onClicked: Qt.openUrlExternally("mailto:qinzijun@dias.com.cn?subject=ICM-SV51%20CRC工具")
                 }
 
                 CustomMenuItem {
@@ -133,7 +133,7 @@ Window {
         modal: true
 
         Label {
-            text: "ICM-MIFA CRC工具 v1.5\n用于MIFA项目FLASH分段并计算CRC的工具\n\n作者：覃子俊\n联系方式：qinzijun@dias.com.cn\n时间：2021年02月05日\n\n版权所有 © 2020 覃子俊 保留所有权利"
+            text: "ICM-SV51 CRC工具 v1.6\n用于SV51项目FLASH分段并计算CRC的工具\n\n作者：覃子俊\n联系方式：qinzijun@dias.com.cn\n时间：2021年03月23日\n\n版权所有 © 2021 覃子俊 保留所有权利"
             font: Qt.font({
                               family: "华文楷体",
                               pointSize: 12,

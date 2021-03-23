@@ -125,7 +125,7 @@ WorkerScript.onMessage = function(msg) {
     printMsg('开始生成……\n\n');
 
     //输出hex
-    var crcByteCount = 2;//CRC算法字节数
+    var crcByteCount = 4;//CRC算法字节数
 
     for(var i = 0; i < output.length; i++) {
         if(output[i].content.length === 0) {
@@ -159,13 +159,13 @@ WorkerScript.onMessage = function(msg) {
         //计算CRC
         printMsg('\n开始计算' + output[i].fileName + '的CRC值……\n');
         if(output[i].headOrTail === 'tail') {
-            var crc = cal_CrcCal_16(output[i].content.slice(0, -crcByteCount));//按CRC字节数计算
+            var crc = cal_CrcCal_32(output[i].content.slice(0, -crcByteCount));//按CRC字节数计算
             var crcStr = padding(crc.toString(16), crcByteCount * 2).toUpperCase();//按CRC十六进制数的个数填充
             for(var j = 0; j < crcByteCount; j++) {//按CRC字节数遍历
                 output[i].content[output[i].content.length - crcByteCount + j] = parseInt(crcStr.slice(2 * j, 2 * j + 2), 16);
             }
         }else if(output[i].headOrTail === 'head') {
-            var crc = cal_CrcCal_16(output[i].content.slice(crcByteCount));//按CRC字节数计算
+            var crc = cal_CrcCal_32(output[i].content.slice(crcByteCount));//按CRC字节数计算
             var crcStr = padding(crc.toString(16), crcByteCount * 2).toUpperCase();//按CRC十六进制数的个数填充
             for(var j = 0; j < crcByteCount; j++) {//按CRC字节数遍历
                 output[i].content[j] = parseInt(crcStr.slice(2 * j, 2 * j + 2), 16);
