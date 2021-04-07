@@ -222,13 +222,13 @@ WorkerScript.onMessage = function(msg) {
             }
 
             if(lineDataWrited >= length) {
-                outText += padding((-checksum & 0xFF).toString(16), 2).toUpperCase() + '\n';
+                outText += padding((-checksum & 0xFF).toString(16), 2).toUpperCase() + '\r\n';
                 lineDataWrited = 0;
                 checksum = 0;
             }
         }
 
-        outText += ':00000001FF\n'
+        outText += ':00000001FF\r\n'
         write('file:///' + msg.hexFile.slice(0, msg.hexFile.lastIndexOf('/') + 1) + output[i].fileName, outText);
     }
 

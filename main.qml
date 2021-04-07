@@ -133,7 +133,7 @@ Window {
         modal: true
 
         Label {
-            text: "PGM CRC工具 v1.0\n用于PGM项目FLASH分段并计算CRC的工具\n\n作者：覃子俊\n联系方式：qinzijun@dias.com.cn\n时间：2021年03月18日\n\n版权所有 © 2021 覃子俊 保留所有权利"
+            text: "PGM CRC工具 v1.1\n用于PGM项目FLASH分段并计算CRC的工具\n\n作者：覃子俊\n联系方式：qinzijun@dias.com.cn\n时间：2021年04月07日\n\n版权所有 © 2021 覃子俊 保留所有权利"
             font: Qt.font({
                               family: "华文楷体",
                               pointSize: 12,
