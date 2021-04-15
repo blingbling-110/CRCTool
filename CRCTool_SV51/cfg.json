@@ -1,0 +1,3 @@
+{"startAddr":"0x70100000","endAddr":"0x70102003","fileName":"ADAS_ICM_BSW_FLS_CRC.hex","headOrTail":"tail"}
+{"startAddr":"0x80028000","endAddr":"0x80037FFF","fileName":"PGM_BSW_CAL_CRC.hex","headOrTail":"head"}
+{"startAddr":"0x80038000","endAddr":"0x801FFFFF","fileName":"PGM_BSW_APP_CRC.hex","headOrTail":"head"}
